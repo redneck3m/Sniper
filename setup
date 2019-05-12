@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+echo "----------Updating------------"
+sudo apt-get update
+echo "----------Upgrading-----------"
+sudo apt-get upgrade
+echo "------Installing Python-------"
+sudo apt-get install python3
+sudo apt-get upgrade python3
+echo "--------Creating Link---------"
+sudo ln ./start /usr/bin/sniper 
+echo "-------------Done-------------"

