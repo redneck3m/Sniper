@@ -1,9 +1,12 @@
 # Sniper
 GUI that sets up a website which hijacks the clipboard and executes commands.
 
-Install with 
+Install with:
+
 sudo chmod +x setup
+
 sudo ./setup
 
-Run with 
+Run with:
+
 sudo sniper
